@@ -1,0 +1,160 @@
+<!-- Michael Underwood, Michael Hutchings, Preston Fitzgerald, Elliot Pi, Lily Pettit, Noelle Burton-->
+<!-- This is the about page for the Missing Persons Website.-->
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+   
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Landing Page - Start Bootstrap Theme</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+            <a class="navbar-brand" href="#!">Human Trafficking</a>
+            <div class="ms-auto me-3">
+                <a href="{% url 'about' %}" style="text-decoration:none; color:#333; font-size:16px; font-weight:bold;">About</a>
+                <span style="color:#333; font-size:16px; font-weight:bold;">|</span>
+                <a href="{% url 'index' %}" style="text-decoration:none; color:#333; font-size:16px; font-weight:bold; margin-left:5px;">Home</a>
+            </div>
+            <a class="btn btn-primary" href="#signup">Sign Up</a>
+            </div>
+        </nav>
+
+
+    </head>
+    <body>
+        <!-- This is a list for potential indicators of human trafficking.-->
+        <h1 style = "margin-left: 75px; Courier New, monospace; margin-top: 10px;"> Information About Human Trafficking</h1>
+        <br>
+        <h3 style="text-align:center; margin-left: 25px;"><b>Do You Think You Know Someone In Danger?</b></h3>
+        <h3 style="text-align:center; margin-left: 25px;"><b>Watch For These Possible Indicators</b></h3>
+        <p >  
+            <ul class="boxAgain special_bullet">
+                <li>Does the person appear disconnected from family, friends, community organizations, or houses of worship?</li>
+                <li>Has a child stopped attending school?</li>
+                <li>Has the person had a sudden or dramatic change in behavior?</li>
+                <li>Is a juvenile engaging in commercial sex acts?</li>
+                <li>Is the person disoriented or confused or showing signs of mental or physical abuse?</li>
+                <li>Does the person have bruises in various stages of healing?</li>
+                <li>Is the person fearful, timid, or submissive?</li>
+                <li>Is the person often in the company of someone to whom he or she defers? Or someone who seems to be in control of the situation?</li>
+                <li>Does the person appear to be coached on what to say?</li>
+                <li>Is the person living in unsuitable conditions?</li>
+                <li>Does the person lack personal possessions and appear not to have a stable living situation?</li>
+                <li>Does the person have freedom of movement? Can the person freely leave where they live?</li>
+            </ul>
+        </p>
+
+        <!-- This contatins six text boxes of facts / myths-->
+        <section class="testimonials text-center bg-light">
+            <div class="container">
+                <h2 class="mb-5">Six Facts Everyone Should Know</h2>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                           
+                            <h5>Fact #1:</h5>
+                            <p class="font-weight-light mb-0">
+                            Human trafficking exists in every country, including the United States.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            
+                            <h5>Fact #2:</h5>
+                            <p class="font-weight-light mb-0">
+                                Human trafficking victims can be any age, race, gender, or nationality </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            
+                            <h5>Fact 3#:</h5>
+                            <p class="font-weight-light mb-0">Forced labor is also a significant and prevalent type of human trafficking. 
+                                </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <h2 class="mb-5"></h2>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                          
+                            <h5>Fact #4:</h5>
+                            <p class="font-weight-light mb-0">
+                               Anyone under 18 induced to perform commercial sex acts is a victim of human trafficking.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            
+                            <h5>Fact #5:</h5>
+                            <p class="font-weight-light mb-0">
+                                Human trafficking is not the same as smuggling. “Trafficking” is exploitation-based and does not require movement across borders. 
+                         </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            
+                            <h5>Fact 6#:</h5>
+                            <p class="font-weight-light mb-0">
+                                Human trafficking is often a hidden crime. Victims may be afraid to come forward and get help .</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </p> 
+        <!-- A pie chart graphic and text explaining the chart, as well as hotline numbers -->
+        </section>
+            <h3 style="text-align:center; margin-top: 10px;">Types of Calls to the National Human Trafficking Hotline in 2016</h3>
+            <br>
+            <span style="float:left;">
+                <img src="data:image/png;base64,{{ chart }}" /> 
+            </span>
+            <span style = "display: block; float: left 10px; ">
+                <ul style = "list-style-type:none; margin-left:15px;">
+                    <li><h3>Top 5 Sex Trafficking Venues</h3>
+                    <li>1. Online Ad
+                    <li>2. Residential Brothels
+                    <li>3. Pornography
+                    <li>4. Hotel/Motel Based
+                    <li>5. Truck Stop Based
+                    <li><br>
+                    <li><h3>Explanation of Pie Chart</h3>
+                    <li>29% of calls were tips regarding human trafficking cases.
+                    <li>28% of calls were regarding people that were believed to be at high risk for human trafficking.
+                    <li>19% of calls were from those who involved in a human trafficking situation deemed a crisis.
+                    <li>12% of calls contained general information regarding human trafficking.
+                    <li>11% of calls contatined referrals regarding those who my be involved in planning and executing the abductions.
+                    <li>1% of calls pertainted to training and technical assistance for the hotline.
+                    <li><br>
+                    <li><h3>List of Resources</h3>
+                    <li>National Human Trafficking Hotline Phone Number: <b>888-373-7888</b>
+                
+                    <li><i>Contact the confidential hotline 24/7 to report tips, seek services, ask for help, or receive information and statistics<br>
+                         related to human trafficking.</i>
+                
+                    <li>The Local Utah Human Trafficking Tipline Phone Number: <b>801-200-3443</b>
+                
+                    <li><i>The Utah Human Trafficking Tipline is a 24-hour tipline. Call the tipline to report tips about human trafficking.<br>
+                         The tipline is answered by a voicemail machine.</i>
+                </ul>
+            </span>
+    </body>
+</html>

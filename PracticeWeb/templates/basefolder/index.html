@@ -1,0 +1,258 @@
+<!-- Michael Underwood, Michael Hutchings, Preston Fitzgerald, Elliot Pi, Lily Pettit, Noelle Burton-->
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Landing Page - Start Bootstrap Theme</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<style>    
+    /* The actual popup (appears on top) */
+    .popup .popuptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    }
+
+    /* Popup arrow */
+    .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+    }
+    
+    /* Toggle this class when clicking on the popup container (hide and show the popup) */
+    .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+    }
+
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    }
+
+    @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+    }
+</style>
+<script>
+    // When the user clicks on <div>, open the popup
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+</script>
+
+    </head>
+    <body>
+        
+
+    <!-- Navigation-->
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+            <a class="navbar-brand" href="#!">Human Trafficking</a>
+            <div class="ms-auto me-3">
+                <a href="{% url 'about' %}" style="text-decoration:none; color:#333; font-size:16px; font-weight:bold;">About</a>
+                <span style="color:#333; font-size:16px; font-weight:bold;">|</span>
+                <a href="{% url 'index' %}" style="text-decoration:none; color:#333; font-size:16px; font-weight:bold; margin-left:5px;">Home</a>
+            </div>
+            <a class="btn btn-primary" href="#signup">Sign Up</a>
+            </div>
+        </nav>
+
+    <!-- Masthead-->
+    <header class="masthead" style="background-image:url(https://st2.depositphotos.com/3591429/5246/i/600/depositphotos_52467247-stock-photo-large-group-of-children.jpg);">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white" >
+                        <!-- Page heading-->
+                        <h1 class="mb-5">Do You Want to Learn More About the Biggest Slave Trade in History?</h1>
+                        <!-- Signup form-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--This is a box that explains more about what human trafficking is.-->
+    <div class="box"> 
+        <p >
+            Every year, millions of men, women, and children are trafficked in countries around the world, including the United States. It is estimated that human trafficking is a $32 billion per year industry, second only to drug trafficking as the most profitable form of transnational crime.
+            Human trafficking is a hidden crime, as victims rarely come forward to seek help because of language barriers, fear of the traffickers, and/or fear of law enforcement.
+            Traffickers use force, fraud, or coercion to lure their victims and force them into labor or commercial sexual exploitation. They look for people who are vulnerable for a variety of reasons, including economic hardship, natural disasters, or political instability. The trauma can be so great that many may not identify themselves as victims or ask for help, even in highly public settings. 
+        </p>
+        
+    </div class="margin">
+    <br><br>
+    <!--This is a Title and explanation of the table that appears below-->
+    <h1 style="text-align:center;">Human Trafficking in Utah</h1>
+    <p style="text-align:center;">This table displays information about persons trafficked in Utah.
+        <br>
+        It shows the names of real people, the dates
+        they went missing, as well as the locations of each abduction.
+    </p>
+    <!-- Image Showcases-->
+    <div style="text-align:center;">
+        <table style="margin: 0 auto; width:80%;" class="table table-bordered table-hover margin">
+          <thead>
+            <tr>
+                <th title="Field #1">Date Missing</th>
+                <th title="Field #2">First Name</th>
+                <th title="Field #3">Last Name</th>
+                <th title="Field #4">Age At Missing</th>
+                <th title="Field #5">City</th>
+                <th title="Field #6">State</th>
+                <th title="Field #7">Gender</th>
+                <th title="Field #8">Race</th>
+                </tr></thead>
+                <tbody>
+                    {% for oMissingPerson in mp %}
+
+                    <tr>
+                        <td>{{oMissingPerson.date_missing}}</td>
+                        <td>{{oMissingPerson.first_name}}</td>
+                        <td>{{oMissingPerson.last_name}}</td>
+                        <td>{{oMissingPerson.age_at_missing}}</td>
+                        <td>{{oMissingPerson.city}}</td>
+                        <td>{{oMissingPerson.state}}</td>
+                        <td>{{oMissingPerson.gender}}</td>
+                        <td>{{oMissingPerson.race}}</td>
+                    </tr>
+
+                    {% endfor %}
+                
+                </tbody></table>
+                                    </div>
+                </div>
+            </div>
+        <br><br>
+        </section> 
+      
+
+   
+    <!-- Call to Action-->
+    <section class="call-to-action text-white text-center" id="signup">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+                    <!-- Signup form-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
+                        <!-- Email address input-->
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
+                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
+                            </div>
+                            <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                        </div>
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                <p>To activate this form, sign up at</p>
+                                <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                    <ul class="list-inline mb-2">
+                        
+                        <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            
+                        <li class="list-inline-item">⋅</li>
+                        <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                            
+                        <li class="list-inline-item">⋅</li>
+                        <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                            
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2023. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item me-4">
+                            <a href="https://www.facebook.com/groups/aworldagainsthumantrafficking" target="_blank">
+                            <i class="bi-facebook fs-3"></i></a>
+                        </li>
+           
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
