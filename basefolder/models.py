@@ -5,6 +5,8 @@ from datetime import datetime
 
 # Create your models here.
 
+
+
 class missingPersons(models.Model):
 
     date_missing = models.DateField(default=datetime.today, blank=True)
