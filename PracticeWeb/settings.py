@@ -80,13 +80,13 @@ WSGI_APPLICATION = 'PracticeWeb.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    """'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'missing_persons',
         'USER' : 'postgres',
         'PASSWORD' : '4preston',
         'HOST' : '0.0.0.0',
-    }
+    }"""
 }
 
 
