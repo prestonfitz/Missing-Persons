@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'missing_persons',
         'USER' : 'postgres',
         'PASSWORD' : '4preston',
-        'HOST' : 'localhost',
+        'HOST' : '0.0.0.0',
     }
 }
 
