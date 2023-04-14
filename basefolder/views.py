@@ -36,7 +36,15 @@ def aboutPageView(request) :
 
    return render(request, 'basefolder/about.html', context)
 
+def showPageView(request, id):
 
+   student=missingPersons.objects.get(id=id)
+
+   context = {
+      "data" : student
+   }
+
+   return render(request,'basefolder/showMissing.html', context)
 
 
 
