@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Landing Page - Start Bootstrap Theme</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <style>
+        label {text-align: center;}
+        input {text-align: center;}
+        table {margin-left: auto; margin-right: auto; margin-top: 10px; margin-bottom:10px;}
+    </style>
+    </head>
+<body>
+ <!-- Navigation-->
+ <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+    <a class="navbar-brand" href="#!">Human Trafficking</a>
+    <div class="ms-auto me-3">
+        <a href="{% url 'about' %}" style="text-decoration:none; color:#333; font-size:16px; font-weight:bold;">About</a>
+        <span style="color:#333; font-size:16px; font-weight:bold;">|</span>
+        <a href="{% url 'index' %}" style="text-decoration:none; color:#333; font-size:16px; font-weight:bold; margin-left:5px;">Home</a>
+    </div>
+    <a class="btn btn-primary" href="#signup">Sign Up</a>
+    </div>
+</nav>
+{% comment %} This is from the dictionary in the view using the key "data" that we had in the dictionary
+We use it as an object in the dictionary and call any of the attributes {% endcomment %}
+<table>
+    <tr>
+      <td><label>First Name</label></td>
+      <td><input type="text" value="{{data.first_name}}"></td>
+    </tr>
+    <tr>
+      <td><label>Last Name</label></td>
+      <td><input type="text" value="{{data.last_name}}"></td>
+    </tr>
+    <tr>
+      <td><label>Age at Missing</label></td>
+      <td><input type="text" value="{{data.age_at_missing}}"></td>
+    </tr>
+    <tr>
+      <td><label>City</label></td>
+      <td><input type="text" value="{{data.city}}"></td>
+    </tr>
+    <tr>
+      <td><label>State</label></td>
+      <td><input type="text" value="{{data.state}}"></td>
+    </tr>
+    <tr>
+      <td><label>Gender</label></td>
+      <td><input type="text" value="{{data.gender}}"></td>
+    </tr>
+    <tr>
+      <td><label>Date Missing</label></td>
+      <td><input type="text" value="{{data.date_missing}}"></td>
+    </tr>
+  </table>
+
+</form>    
+</body>
+
+<!-- Footer-->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                    <ul class="list-inline mb-2">
+                        
+                        <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            
+                        <li class="list-inline-item">⋅</li>
+                        <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                            
+                        <li class="list-inline-item">⋅</li>
+                        <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                            
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Michael Underwood, Michael Hutchings, Preston Fitzgerald, Elliot Pi, Lily Pettit, Noelle Burton. 2023. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item me-4">
+                            <a href="https://www.facebook.com/groups/aworldagainsthumantrafficking" target="_blank">
+                            <i class="bi-facebook fs-3"></i></a>
+                        </li>
+           
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+    </footer>

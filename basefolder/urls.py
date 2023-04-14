@@ -4,9 +4,11 @@
 from django.urls import path
 from .views import indexPageView
 from .views import aboutPageView
+from .views import showPageView
 
 # url patterns
 urlpatterns = [
+    path("/about",aboutPageView, name='about'),
+    path("<int:id>/", showPageView, name= 'showmissing'),
     path("",indexPageView,name='index'),
-    path("about",aboutPageView, name='about'),
 ]
