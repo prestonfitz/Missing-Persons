@@ -20,8 +20,6 @@ def indexPageView(request) :
         "mp" : mp
     }
    
-
-
    # industry standard
   
    return render(request,'basefolder/index.html',context)
